@@ -1,2 +1,2 @@
 # msup-proxy
-Dockerized OpenRest based proxy for handling document redirects
+Dockerized OpenResty based proxy for handling document redirects
