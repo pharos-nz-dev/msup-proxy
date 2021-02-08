@@ -6,14 +6,11 @@ if [ "$NAMESERVER" == "" ]; then
 fi
 
 echo "Nameserver is: $NAMESERVER"
-echo "server is: $REDIRECT_SERVER"
-echo "path is: $REDIRECT_PATH"
-#envsubst "\$NAMESERVER \$REDIRECT_PATH \$REDIRECT_SERVER" < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf
 echo "********** ROOT CONFIG:"
 cat /usr/local/openresty/nginx/conf/nginx.conf
 echo "********** DEFAULT CONFIG:"
 cat /etc/nginx/conf.d/default.conf
-envsubst "\$NAMESERVER \$REDIRECT_PATH \$REDIRECT_SERVER" < /etc/nginx/nginx.template.conf > /etc/nginx/conf.d/default.conf
+envsubst "\$NAMESERVER" < /etc/nginx/nginx.template.conf > /etc/nginx/conf.d/default.conf
 echo "********** NEW DEFAULT CONFIG:"
 cat /etc/nginx/conf.d/default.conf
 
