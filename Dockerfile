@@ -7,7 +7,4 @@ RUN chmod 644 /etc/nginx/nginx.template.conf
 
 RUN apk update && apk add --no-cache curl iputils bind-tools
 
-ENV REDIRECT_SERVER=api.ci.aws.pharos.com
-ENV REDIRECT_PATH=aka
-
 CMD [ "/container_startup" ]
